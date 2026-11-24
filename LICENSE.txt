@@ -1,0 +1,23 @@
+Orbite : licence d'utilisation
+© 2026 Enguerrand Thomas d'Henain. Tous droits réservés.
+
+1. Utilisation gratuite
+Tu peux télécharger, installer et utiliser Orbite gratuitement, à titre personnel
+ou professionnel, sur autant d'ordinateurs que tu veux.
+
+2. Ce qui est interdit sans autorisation écrite de l'auteur
+- copier, extraire, décompiler ou réutiliser tout ou partie du code d'Orbite ;
+- modifier Orbite ou créer une œuvre dérivée ;
+- redistribuer, vendre ou louer Orbite, ou le publier ailleurs que sur ce site ;
+- retirer ou modifier les mentions de droits d'auteur.
+
+3. Tes données
+Les projets, notes et fichiers que tu crées avec Orbite t'appartiennent.
+Orbite les enregistre sur ton ordinateur et ne les envoie à personne,
+sauf à Claude (Anthropic) quand tu utilises les fonctions Claude avec ta clé API.
+
+4. Garantie
+Orbite est fourni « tel quel », sans garantie d'aucune sorte. L'auteur ne peut
+être tenu responsable des dommages liés à son utilisation.
+
+Contact : via la page GitHub du projet.
