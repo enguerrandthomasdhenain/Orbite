@@ -4,110 +4,21 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Orbite</title>
+<script>try{if(!localStorage.getItem('orbite-lang')&&!/^fr/i.test(navigator.language||'fr'))location.replace('en/')}catch(e){}</script>
 <meta name="description" content="Orbite : tes projets en constellation, avec Claude intégré. Application gratuite pour Windows, macOS et Linux.">
 <meta property="og:title" content="Orbite">
 <meta property="og:description" content="Tes projets en constellation, avec Claude intégré.">
 <meta property="og:image" content="img/constellation.jpg">
+<link rel="alternate" hreflang="en" href="en/">
 <link rel="icon" href="img/icon.png">
-<style>
-/* Orbite : nuit profonde, verre fumé, lumière d'étoile chaude. Une seule ambiance sombre, assumée. */
-:root{
-  --void:#05060a; --panel:#0e1018; --panel-hi:#141722; --line:rgba(255,255,255,.08); --line-hi:rgba(255,255,255,.16);
-  --ink:#eceef4; --soft:#b9bdcb; --muted:#80869a; --faint:#4e5366; --star:#f5d9a6; --violet:#b79cff; --mint:#7fe0c0; --ok:#86e0b5;
-  --ui:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,"Noto Sans",Roboto,sans-serif;
-  --mono:ui-monospace,"SF Mono","Cascadia Mono",Menlo,Consolas,monospace;
-  color-scheme:dark;
-}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;background:var(--void);color:var(--ink);font:16px/1.6 var(--ui);-webkit-font-smoothing:antialiased}
-a{color:inherit}
-img{max-width:100%;display:block}
-:focus-visible{outline:2px solid var(--star);outline-offset:3px}
-.wrap{max-width:1120px;margin:0 auto;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
-/* nav */
-nav.top{position:sticky;top:0;z-index:20;background:rgba(5,6,10,.72);backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
-nav.top .wrap{display:flex;align-items:center;gap:28px;height:62px}
-.logo{display:flex;align-items:center;gap:10px;font-weight:600;letter-spacing:.01em;text-decoration:none}
-.logo i{width:14px;height:14px;border-radius:50%;border:1.6px solid var(--star);box-shadow:0 0 12px rgba(245,217,166,.7),inset 0 0 4px rgba(245,217,166,.6)}
-nav.top .links{display:flex;gap:22px;margin-left:auto;font-size:14.5px}
-nav.top .links a{color:var(--muted);text-decoration:none}
-nav.top .links a:hover{color:var(--ink)}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;border-radius:999px;padding:12px 22px;font-weight:600;font-size:15px;text-decoration:none;border:1px solid var(--line-hi);color:var(--ink);background:rgba(255,255,255,.04);transition:background .2s,transform .2s}
-.btn:hover{background:rgba(255,255,255,.09)}
-.btn.primary{background:var(--ink);color:#0b0c12;border-color:transparent}
-.btn.primary:hover{background:#fff;transform:translateY(-1px)}
-.btn.sm{padding:7px 15px;font-size:13.5px}
-.btn svg{width:17px;height:17px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
-/* hero */
-.hero{position:relative;overflow:hidden;border-bottom:1px solid var(--line)}
-.hero canvas{position:absolute;inset:0;width:100%;height:100%}
-.hero .wrap{position:relative;padding-top:250px;padding-bottom:70px;text-align:center}
-.eyebrow{display:inline-block;font:12.5px var(--mono);color:var(--star);border:1px solid rgba(245,217,166,.3);border-radius:999px;padding:4px 12px;margin-bottom:26px;background:rgba(5,6,10,.5)}
-h1{font-weight:250;font-size:clamp(42px,7.4vw,86px);line-height:1;letter-spacing:-.045em;margin:0 auto 22px;max-width:12ch;text-wrap:balance}
-h1 em{font-style:normal;background:linear-gradient(100deg,var(--star),#ffb9a0 45%,var(--violet));-webkit-background-clip:text;background-clip:text;color:transparent}
-.hero p.lead{font-size:clamp(17px,2vw,20px);color:var(--soft);max-width:36em;margin:0 auto 34px;text-wrap:balance}
-.cta{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
-.meta{margin-top:18px;color:var(--muted);font-size:13.5px}
-.shot{margin:64px auto 0;max-width:1000px;border-radius:16px;overflow:hidden;border:1px solid var(--line-hi);box-shadow:0 40px 120px rgba(0,0,0,.7),0 0 0 1px rgba(0,0,0,.5);background:var(--panel)}
-/* sections */
-section.block{padding:96px 0;border-bottom:1px solid var(--line)}
-h2{font-weight:300;font-size:clamp(30px,4.2vw,46px);letter-spacing:-.03em;line-height:1.1;margin:0 0 14px;text-wrap:balance}
-.sub{color:var(--soft);max-width:40em;margin:0 0 48px}
-.feats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:18px;overflow:hidden}
-@media (max-width:860px){.feats{grid-template-columns:1fr}}
-.feat{background:var(--void);padding:30px 28px;min-width:0}
-.feat .ic{width:40px;height:40px;border-radius:11px;border:1px solid var(--line-hi);display:grid;place-items:center;margin-bottom:18px;color:var(--star)}
-.feat .ic svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
-.feat h3{margin:0 0 8px;font-weight:600;font-size:17px}
-.feat p{margin:0;color:var(--muted);font-size:15px}
-.gallery{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}
-@media (max-width:760px){.gallery{grid-template-columns:1fr}}
-figure{margin:0;min-width:0}
-figure img{border-radius:12px;border:1px solid var(--line-hi)}
-figcaption{margin-top:12px;color:var(--muted);font-size:14px}
-figcaption b{color:var(--ink);font-weight:600}
-/* download */
-.dl{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
-@media (max-width:860px){.dl{grid-template-columns:1fr}}
-.os{position:relative;background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:26px 24px 22px;display:flex;flex-direction:column;gap:12px;min-width:0}
-.os.here{border-color:rgba(245,217,166,.5);box-shadow:0 0 0 1px rgba(245,217,166,.2) inset,0 20px 60px rgba(245,217,166,.06)}
-.os .badge{position:absolute;top:18px;right:18px;font-size:12px;color:var(--ok);border:1px solid rgba(134,224,181,.35);border-radius:999px;padding:1px 10px}
-.os svg.logo-os{width:34px;height:34px;stroke:var(--soft);fill:none;stroke-width:1.4;stroke-linecap:round;stroke-linejoin:round}
-.os.here svg.logo-os{stroke:var(--star)}
-.os h3{margin:0;font-weight:600;font-size:20px}
-.os p{margin:0;color:var(--muted);font-size:14px}
-.os .btn{margin-top:8px}
-.os .size{font:12.5px var(--mono);color:var(--faint);text-align:center}
-.steps{margin-top:28px;background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:26px 28px}
-.tabs{display:flex;gap:6px;margin-bottom:18px;flex-wrap:wrap}
-.tabs button{font:inherit;font-size:14px;border:1px solid var(--line);background:none;color:var(--muted);border-radius:999px;padding:5px 14px;cursor:pointer}
-.tabs button.on{color:var(--ink);border-color:var(--line-hi);background:rgba(255,255,255,.06)}
-.steps ol{margin:0;padding-left:22px;display:flex;flex-direction:column;gap:10px;color:var(--soft)}
-.steps li::marker{color:var(--star);font-weight:600}
-.steps b{color:var(--ink)}
-code,kbd{font:13.5px var(--mono);background:rgba(255,255,255,.06);border:1px solid var(--line);border-radius:6px;padding:1px 6px;color:var(--ink);word-break:break-word}
-/* faq */
-.faq{display:flex;flex-direction:column;border-top:1px solid var(--line)}
-details{border-bottom:1px solid var(--line);padding:18px 4px}
-summary{cursor:pointer;font-weight:600;font-size:17px;list-style:none;display:flex;justify-content:space-between;gap:16px}
-summary::-webkit-details-marker{display:none}
-summary::after{content:"+";color:var(--muted);font-weight:300;font-size:22px;line-height:1}
-details[open] summary::after{content:"−"}
-details p{color:var(--soft);margin:12px 0 0;max-width:62em}
-footer{padding:40px 0 60px;color:var(--muted);font-size:14px}
-footer .wrap{display:flex;gap:20px;flex-wrap:wrap;align-items:center}
-footer .grow{flex:1}
-footer a{color:var(--soft)}
-@media (max-width:640px){nav.top .links{display:none}.hero .wrap{padding-top:220px}}
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn{transition:none}}
-</style>
+<link rel="stylesheet" href="site.css">
 </head>
 <body>
 
 <nav class="top"><div class="wrap">
   <a class="logo" href="#"><i></i>Orbite</a>
   <div class="links"><a href="#fonctionnalites">Fonctionnalités</a><a href="#apercu">Aperçu</a><a href="#telecharger">Télécharger</a><a href="#questions">Questions</a></div>
+  <div class="lang" aria-label="Langue"><a href="./" data-l="fr" class="on" aria-current="true">FR</a><a href="en/" data-l="en" hreflang="en">EN</a></div>
   <a class="btn sm primary" href="#telecharger">Télécharger</a>
 </div></nav>
 
@@ -122,7 +33,7 @@ footer a{color:var(--soft)}
       <a class="btn" href="#apercu">Voir l'aperçu</a>
     </div>
     <p class="meta">Windows · macOS · Linux</p>
-    <div class="shot"><img src="img/constellation.jpg" alt="L'écran d'accueil d'Orbite : des projets en amas d'étoiles autour d'un anneau lumineux, avec les échéances à gauche" width="1600" height="1041"></div>
+    <div class="shot"><video id="demo" data-base="video/" poster="img/constellation.jpg" muted loop playsinline autoplay preload="metadata" aria-label="Démonstration : Claude crée un projet, qui apparaît comme une nouvelle constellation"></video></div>
   </div>
 </header>
 
@@ -143,10 +54,10 @@ footer a{color:var(--soft)}
   <h2>Un aperçu.</h2>
   <p class="sub">Des panneaux en verre fumé au-dessus du ciel, et rien de superflu.</p>
   <div class="gallery">
-    <figure><img src="img/projet.jpg" alt="Un projet ouvert, avec sa note et sa constellation à gauche" loading="lazy" width="1600" height="1041"><figcaption><b>Un projet</b> · notes, tâches, fichiers et liens</figcaption></figure>
-    <figure><img src="img/brief.jpg" alt="L'accueil avec le brief du jour" loading="lazy" width="1470" height="956"><figcaption><b>Le brief du jour</b> · ce qui compte aujourd'hui</figcaption></figure>
-    <figure><img src="img/focus.jpg" alt="Le mode focus avec un minuteur circulaire" loading="lazy" width="1470" height="956"><figcaption><b>Mode focus</b> · une tâche, un minuteur, rien d'autre</figcaption></figure>
-    <figure><img src="img/atlas.jpg" alt="La vue Atlas en barres de particules" loading="lazy" width="1470" height="956"><figcaption><b>Atlas</b> · où va ton énergie, en particules</figcaption></figure>
+    <figure><div class="frame"><img src="img/claude.jpg" alt="Claude crée le projet Voyage à Lisbonne avec ses tâches et une note" loading="lazy" width="2400" height="1350"></div><figcaption><b>Claude</b> · une phrase, et le projet est créé</figcaption></figure>
+    <figure><div class="frame"><img src="img/projet.jpg" alt="Un projet ouvert avec ses tâches et ses échéances, à côté de sa constellation" loading="lazy" width="2400" height="1350"></div><figcaption><b>Un projet</b> · notes, tâches, fichiers et liens</figcaption></figure>
+    <figure><div class="frame"><img src="img/focus.jpg" alt="Le mode focus avec un minuteur circulaire" loading="lazy" width="2400" height="1350"></div><figcaption><b>Mode focus</b> · une tâche, un minuteur, rien d'autre</figcaption></figure>
+    <figure><div class="frame"><img src="img/projets.jpg" alt="La liste des projets en cartes, avec leur statut et leur avancement" loading="lazy" width="2400" height="1350"></div><figcaption><b>Tous les projets</b> · statut et avancement d'un coup d'œil</figcaption></figure>
   </div>
 </div></section>
 
@@ -197,9 +108,45 @@ footer a{color:var(--soft)}
 <section class="block" id="questions"><div class="wrap">
   <h2>Questions.</h2>
   <div class="faq">
+    <h3>Claude</h3>
+    <details><summary>Comment activer Claude dans Orbite ?</summary>
+      <ol>
+        <li>Crée un compte sur <a href="https://console.anthropic.com" target="_blank" rel="noopener">console.anthropic.com</a> (c'est la console développeur d'Anthropic, différente de claude.ai).</li>
+        <li>Dans <b>Billing</b>, ajoute un peu de crédit. C'est du prépayé : rien n'est prélevé au-delà.</li>
+        <li>Dans <b>API Keys</b>, clique sur <b>Create Key</b>, puis copie la clé qui commence par <code>sk-ant-</code>. Elle ne s'affiche qu'une fois.</li>
+        <li>Dans Orbite, ouvre les <b>Réglages</b> (la roue en haut à droite), colle la clé et clique sur <b>Enregistrer</b>.</li>
+        <li>Clique sur <b>✦ Claude</b> en haut de l'écran et écris ta demande, par exemple : « Crée un projet pour mon déménagement avec les tâches à faire ».</li>
+      </ol></details>
+    <details><summary>Mon abonnement claude.ai suffit-il ?</summary><p>Non. Les abonnements claude.ai (Pro, Max, Team) et l'API sont deux services séparés chez Anthropic. Orbite utilise l'API, qui demande sa propre clé et son propre crédit.</p></details>
+    <details><summary>Combien coûte Claude dans Orbite ?</summary><p>Orbite ne prend rien : tu paies directement Anthropic, à l'usage, sans abonnement. Une demande courante coûte en général quelques centimes, et moins avec les modèles plus légers. Tu peux fixer une limite de dépense mensuelle dans la console Anthropic (rubrique <b>Limits</b>) pour ne jamais avoir de surprise. Les tarifs à jour sont sur <a href="https://www.anthropic.com/pricing" target="_blank" rel="noopener">anthropic.com/pricing</a>.</p></details>
+    <details><summary>Quel modèle choisir ?</summary><ul>
+      <li><b>Opus</b> : le plus capable, idéal pour organiser des projets complexes ou rédiger des notes détaillées. C'est le choix par défaut.</li>
+      <li><b>Sonnet</b> : un bon équilibre entre qualité, vitesse et prix.</li>
+      <li><b>Haiku</b> : le plus rapide et le plus économique, parfait pour la capture rapide et les petites demandes.</li>
+    </ul><p>Tu peux changer de modèle à tout moment dans les Réglages.</p></details>
+    <details><summary>Que peut faire Claude dans Orbite ?</summary><ul>
+      <li>Créer un projet complet à partir d'une phrase : tâches, échéances et notes de départ.</li>
+      <li>Ajouter, cocher, renommer ou dater des tâches.</li>
+      <li>Écrire ou réécrire une note : point d'étape, plan, checklist.</li>
+      <li>Changer le nom, la description ou le statut d'un projet, et relier des projets entre eux.</li>
+      <li>Répondre à tes questions sur tes projets : « Qu'est-ce qui est en retard cette semaine ? »</li>
+      <li>Préparer le brief du matin, ranger tes captures rapides dans le bon projet et résumer tes articles et PDF.</li>
+    </ul></details>
+    <details><summary>Qu'est-ce qui est envoyé à Anthropic ?</summary><p>Seulement ce dont Claude a besoin, et seulement quand tu utilises une fonction Claude : ta demande et les éléments de projets concernés. Sans clé API, rien ne quitte ton ordinateur. Orbite n'a ni compte, ni publicité, ni mesure d'audience. Ta clé est chiffrée avec le trousseau de ton système.</p></details>
+
+    <h3>Utilisation</h3>
+    <details><summary>Comment marche la capture rapide ?</summary><p>De n'importe quelle application, appuie sur <kbd>⌥ Espace</kbd> sur Mac ou <kbd>Ctrl Alt Espace</kbd> sur Windows et Linux. Une petite fenêtre s'ouvre : tape ton idée, valide, elle est enregistrée. Avec Claude, elle est rangée automatiquement dans le bon projet ; sans Claude, elle arrive dans la Boîte de réception. Pour que le raccourci marche tout le temps, coche « Ouvrir Orbite au démarrage de l'ordinateur » dans les Réglages.</p></details>
+    <details><summary>Comment importer mes conversations claude.ai ?</summary><ol>
+      <li>Sur claude.ai : <b>Paramètres</b> → <b>Confidentialité</b> → <b>Exporter les données</b>. Tu reçois un fichier .zip par e-mail.</li>
+      <li>Dans Orbite : <b>Réglages</b> → <b>Choisir l'export…</b>, puis sélectionne le .zip.</li>
+    </ol><p>Tes projets Claude deviennent des projets Orbite, et chaque conversation devient une note. Tu peux réimporter plus tard : rien n'est dupliqué.</p></details>
+    <details><summary>Orbite fonctionne-t-il sans Claude ?</summary><p>Oui. Constellation, projets, notes, tâches, focus, chronologie et capture rapide fonctionnent sans clé API. Claude ajoute la création automatique, le brief et les résumés.</p></details>
+    <details><summary>Comment mettre Orbite à jour ?</summary><p>Télécharge la nouvelle version ici et relance l'installateur au même emplacement. L'application est remplacée, tes projets restent intacts.</p></details>
+
+    <h3>Installation et données</h3>
     <details><summary>Windows bloque Orbite : « Une stratégie de contrôle d'application a bloqué ce fichier »</summary><p>C'est le Contrôle intelligent des applications de Windows 11 : il bloque les logiciels qui ne sont pas encore signés par un éditeur reconnu. Tu peux le désactiver dans Sécurité Windows → Contrôle des applications et du navigateur. Attention, sur beaucoup de versions de Windows, on ne peut plus le réactiver ensuite sans réinitialiser Windows. Une version signée d'Orbite est prévue.</p></details>
-    <details><summary>Où sont mes données ?</summary><p>Sur ton ordinateur, dans <code>Documents/Orbite</code> : un dossier par projet, et chaque note est un fichier <code>.md</code> normal. Tu peux les sauvegarder ou les synchroniser comme tu veux.</p></details>
-    <details><summary>Faut-il payer pour Claude ?</summary><p>Orbite est gratuit et fonctionne sans Claude. Pour activer Claude (brief, capture rangée automatiquement, résumés), il faut une clé API Anthropic, facturée à l'usage par Anthropic. Elle est stockée chiffrée sur ton ordinateur.</p></details>
+    <details><summary>Où sont mes données ?</summary><p>Sur ton ordinateur, dans <code>Documents/Orbite</code> : un dossier par projet, et chaque note est un fichier <code>.md</code> normal. Tu peux les sauvegarder ou les synchroniser comme tu veux (iCloud, OneDrive, Nextcloud…).</p></details>
+    <details><summary>Orbite est-il vraiment gratuit ?</summary><p>Oui : pas d'abonnement, pas de publicité, pas de version payante cachée. Seul Claude, si tu l'actives, est facturé par Anthropic selon ton usage.</p></details>
     <details><summary>Comment désinstaller ?</summary><p>Windows : <code>desinstaller.cmd</code> dans le dossier d'installation. Linux : <code>desinstaller.sh</code> dans le dossier d'installation. macOS : mets Orbite à la corbeille. Tes projets dans Documents/Orbite sont conservés.</p></details>
     <details><summary>Puis-je reprendre ou modifier le code d'Orbite ?</summary><p>Non. Orbite est gratuit à utiliser, mais son code reste la propriété de son auteur. La copie, la modification et la redistribution sont interdites sans autorisation écrite. Les conditions complètes sont dans la <a href="LICENSE.txt">licence</a>.</p></details>
   </div>
@@ -211,51 +158,6 @@ footer a{color:var(--soft)}
   <span>© 2026 Enguerrand Thomas d’Henain · Tous droits réservés · <a href="LICENSE.txt">Licence</a></span>
 </div></footer>
 
-<script>
-(() => {
-  const ua = navigator.userAgent;
-  const here = /Windows/i.test(ua) ? 'win' : /Mac/i.test(ua) && !/iPhone|iPad/i.test(ua) ? 'mac' : /Linux|X11/i.test(ua) && !/Android/i.test(ua) ? 'linux' : null;
-  const names = { win: 'Windows', mac: 'macOS', linux: 'Linux' };
-  const show = (os) => { for (const k of ['win', 'mac', 'linux']) document.getElementById('how-' + k).hidden = k !== os; document.querySelectorAll('#tabs button').forEach((b) => b.classList.toggle('on', b.dataset.os === os)); };
-  if (here) {
-    const card = document.querySelector(`.os[data-os="${here}"]`);
-    card.classList.add('here'); card.insertAdjacentHTML('afterbegin', '<span class="badge">ton système</span>');
-    document.getElementById('dl').prepend(card);
-    const hero = document.getElementById('heroDl'); hero.href = card.querySelector('a').getAttribute('href'); hero.setAttribute('download', '');
-    hero.querySelector('span').textContent = 'Télécharger pour ' + names[here];
-    hero.addEventListener('click', () => { show(here); setTimeout(() => document.getElementById('telecharger').scrollIntoView(), 400); });
-  }
-  show(here || 'win');
-  document.getElementById('tabs').addEventListener('click', (e) => { const b = e.target.closest('button'); if (b) show(b.dataset.os); });
-  document.querySelectorAll('.os a').forEach((a) => a.addEventListener('click', () => show(a.closest('.os').dataset.os)));
-
-  /* ciel : étoiles qui tournent lentement autour d'un anneau lumineux */
-  const cv = document.getElementById('sky'), g = cv.getContext('2d'); let W, H, D;
-  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
-  let s = 7; const R = () => (s = (s * 16807) % 2147483647) / 2147483647;
-  const cols = ['#f5d9a6', '#b79cff', '#7fe0c0', '#9fd8ff', '#ffffff'];
-  const stars = Array.from({ length: 520 }, () => ({ a: R() * 6.283, r: 60 + Math.pow(R(), 0.55) * 900, s: R() < 0.07 ? 2.2 : 1.1, c: cols[Math.floor(R() * 5)], tw: R() * 6 }));
-  const disk = Array.from({ length: 1100 }, () => ({ a: R() * 6.283, r: 34 + Math.pow(R(), 1.8) * 80, c: R() }));
-  const size = () => { const r = cv.getBoundingClientRect(); D = Math.min(2, devicePixelRatio || 1); W = r.width; H = r.height; cv.width = W * D; cv.height = H * D; };
-  const frame = (t) => {
-    const T = reduce ? 0 : t / 1000; g.setTransform(D, 0, 0, D, 0, 0); g.fillStyle = '#05060a'; g.fillRect(0, 0, W, H);
-    const cx = W / 2, cy = 125;
-    const neb = g.createRadialGradient(cx, cy, 10, cx, cy, Math.max(W, H) * 0.7); neb.addColorStop(0, 'rgba(120,90,170,.13)'); neb.addColorStop(1, 'rgba(0,0,0,0)'); g.fillStyle = neb; g.fillRect(0, 0, W, H);
-    g.globalCompositeOperation = 'lighter';
-    for (const st of stars) { const a = st.a + T * 0.015 * (160 / st.r); g.globalAlpha = 0.25 + 0.3 * Math.sin(T * 1.3 + st.tw); g.fillStyle = st.c; g.fillRect(cx + Math.cos(a) * st.r, cy + Math.sin(a) * st.r * 0.3, st.s, st.s); }
-    const halo = g.createRadialGradient(cx, cy, 20, cx, cy, 140); halo.addColorStop(0, 'rgba(255,210,150,.30)'); halo.addColorStop(1, 'rgba(255,210,150,0)'); g.globalAlpha = 1; g.fillStyle = halo; g.fillRect(cx - 140, cy - 140, 280, 280);
-    const pts = disk.map((d) => { const a = d.a + T * 0.5 / Math.sqrt(d.r / 34); return [cx + Math.cos(a) * d.r, cy + Math.sin(a) * d.r * 0.22, Math.sin(a), d]; });
-    const dot = ([x, y, , d]) => { g.globalAlpha = 0.22 + 0.5 * (1 - (d.r - 34) / 80); g.fillStyle = d.c < 0.5 ? '#ffd9a0' : d.c < 0.85 ? '#ffb27a' : '#fff3dd'; g.fillRect(x, y, 1.5, 1.5); };
-    pts.filter((p) => p[2] < 0).forEach(dot);
-    g.globalAlpha = 0.4; g.strokeStyle = '#ffe3b8'; g.lineWidth = 2.6; g.beginPath(); g.ellipse(cx, cy - 1, 34, 32, 0, Math.PI * 1.05, Math.PI * 1.95); g.stroke();
-    g.globalCompositeOperation = 'source-over'; g.globalAlpha = 1; g.fillStyle = '#020203'; g.beginPath(); g.arc(cx, cy, 23, 0, 6.283); g.fill();
-    g.globalCompositeOperation = 'lighter'; g.strokeStyle = '#fff0d6'; g.lineWidth = 1.3; g.globalAlpha = 0.9; g.beginPath(); g.arc(cx, cy, 24, 0, 6.283); g.stroke();
-    pts.filter((p) => p[2] >= 0).forEach(dot);
-    g.globalCompositeOperation = 'source-over'; g.globalAlpha = 1;
-    if (!reduce) requestAnimationFrame(frame);
-  };
-  size(); addEventListener('resize', size); requestAnimationFrame(frame);
-})();
-</script>
+<script src="site.js"></script>
 </body>
 </html>
