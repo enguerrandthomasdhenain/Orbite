@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Orbite</title>
-<meta name="description" content="Orbite: your projects as constellations, with Claude built in. Free desktop app for Windows, macOS and Linux.">
+<meta name="description" content="Orbite: your projects as constellations, with Claude, ChatGPT or a local AI built in. Free desktop app for Windows, macOS and Linux.">
 <meta property="og:title" content="Orbite">
 <meta property="og:description" content="Your projects as constellations, with Claude built in.">
 <meta property="og:image" content="../img/constellation.jpg">
@@ -16,7 +16,7 @@
 
 <nav class="top"><div class="wrap">
   <a class="logo" href="#"><i></i>Orbite</a>
-  <div class="links"><a href="#features">Features</a><a href="#preview">Preview</a><a href="#telecharger">Download</a><a href="#faq">FAQ</a></div>
+  <div class="links"><a href="#whats-new">What's new</a><a href="#features">Features</a><a href="#preview">Preview</a><a href="#telecharger">Download</a><a href="#faq">FAQ</a></div>
   <div class="lang" aria-label="Language"><a href="../" data-l="fr" hreflang="fr">FR</a><a href="./" data-l="en" class="on" aria-current="true">EN</a></div>
   <a class="btn sm primary" href="#telecharger">Download</a>
 </div></nav>
@@ -24,9 +24,9 @@
 <header class="hero">
   <canvas id="sky" aria-hidden="true"></canvas>
   <div class="wrap">
-    <span class="eyebrow">Version 1.1 · free</span>
+    <span class="eyebrow"><a href="#whats-new" style="color:inherit;text-decoration:none">New · version 1.3 · free</a></span>
     <h1>Your projects, <em>as constellations.</em></h1>
-    <p class="lead">Orbite arranges your projects, notes and tasks in a living sky. Claude helps you move them forward, and everything stays on your computer.</p>
+    <p class="lead">Orbite arranges your projects, notes and tasks in a living sky. Claude, ChatGPT or a local AI help you move them forward, and everything stays on your computer.</p>
     <div class="cta">
       <a class="btn primary" id="heroDl" href="#telecharger"><svg viewBox="0 0 24 24"><path d="M12 4v11m0 0l-4-4m4 4l4-4M5 19h14"/></svg><span>Download</span></a>
       <a class="btn" href="#preview">See the preview</a>
@@ -36,12 +36,27 @@
   </div>
 </header>
 
+<section class="block" id="whats-new"><div class="wrap">
+  <span class="eyebrow">Update · version 1.3</span>
+  <h2>What's new in Orbite 1.3.</h2>
+  <p class="sub">A big update: three assistants to choose from, a tour to get started, and an app that updates itself.</p>
+  <div class="feats news">
+    <div class="feat"><div class="ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3"/></svg></div><h3>ChatGPT built in</h3><p>Alongside Claude, ChatGPT can create your projects, tasks and notes, prepare your brief and summarize your reading.</p></div>
+    <div class="feat"><div class="ic"><svg viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="11" rx="2"/><path d="M9 20h6M12 16v4"/></svg></div><h3>Local AI, free and private</h3><p>Optional and off by default: an AI that runs on your computer, with no key or subscription. Nothing leaves your machine.</p></div>
+    <div class="feat"><div class="ic"><svg viewBox="0 0 24 24"><path d="M4 7h10M4 17h6M18 7h2M14 17h6"/><circle cx="16" cy="7" r="2"/><circle cx="12" cy="17" r="2"/></svg></div><h3>You choose your assistants</h3><p>Show or hide Claude, ChatGPT and the local AI in Settings, and pick your main assistant. Without any assistant, Orbite is still a complete project app.</p></div>
+    <div class="feat"><div class="ic"><svg viewBox="0 0 24 24"><path d="M12 3l1.8 5.4L19 10l-5.2 1.6L12 17l-1.8-5.4L5 10l5.2-1.6z"/></svg></div><h3>A tour to get started</h3><p>The app starts empty and offers a guided tour to build your own constellation, step by step. Replay it whenever you like.</p></div>
+    <div class="feat"><div class="ic"><svg viewBox="0 0 24 24"><path d="M4 12a8 8 0 0 1 14-5.3M20 12a8 8 0 0 1-14 5.3"/><path d="M18 3v4h-4M6 21v-4h4"/></svg></div><h3>Built-in updates</h3><p>When a new version comes out, Orbite offers it and downloads it in one click. No need to come back to the website.</p></div>
+    <div class="feat"><div class="ic"><svg viewBox="0 0 24 24"><path d="M6 9a6 6 0 0 1 12 0c0 6 2 7 2 7H4s2-1 2-7"/><path d="M10 20a2 2 0 0 0 4 0"/></svg></div><h3>Reminders, backup, English</h3><p>A notification for today's tasks, a full backup in one click, and the whole app now available in English.</p></div>
+  </div>
+  <p class="meta" style="text-align:left;margin-top:22px">From 1.2: Orbite is built with Tauri and Rust. The app weighs under 10 MB and installs with a real installer on each system.</p>
+</div></section>
+
 <section class="block" id="features"><div class="wrap">
   <h2>Everything that matters, in one sky.</h2>
   <p class="sub">Each project is a cluster of stars. The more alive it is, the brighter it shines and the closer it drifts to the center.</p>
   <div class="feats">
     <div class="feat"><div class="ic"><svg viewBox="0 0 24 24"><circle cx="6" cy="7" r="1.6"/><circle cx="17" cy="5" r="1.6"/><circle cx="12" cy="13" r="2"/><circle cx="18" cy="18" r="1.6"/><path d="M7.3 8l3.4 3.8M16.2 6.4l-3.2 5M13.6 14.2l3.2 2.8"/></svg></div><h3>A living constellation</h3><p>Active projects orbit close to the center, forgotten ones drift away and fall asleep. Related projects are joined by dotted lines.</p></div>
-    <div class="feat"><div class="ic"><svg viewBox="0 0 24 24"><path d="M12 3l1.8 5.4L19 10l-5.2 1.6L12 17l-1.8-5.4L5 10l5.2-1.6z"/></svg></div><h3>Claude built in</h3><p>Ask it to create a project, add tasks or write a progress note: it does it directly.</p></div>
+    <div class="feat"><div class="ic"><svg viewBox="0 0 24 24"><path d="M12 3l1.8 5.4L19 10l-5.2 1.6L12 17l-1.8-5.4L5 10l5.2-1.6z"/></svg></div><h3>Claude, ChatGPT or local AI</h3><p>Ask your assistant to create a project, add tasks or write a progress note: it does it directly.</p></div>
     <div class="feat"><div class="ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></div><h3>Morning brief</h3><p>Every day: what's overdue, your three priorities, and the projects worth picking back up.</p></div>
     <div class="feat"><div class="ic"><svg viewBox="0 0 24 24"><path d="M13 2L5 14h6l-1 8 8-12h-6z"/></svg></div><h3>Quick capture</h3><p>One shortcut, from any app: type an idea and it lands in the right project.</p></div>
     <div class="feat"><div class="ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l3 2M10 2h4"/></svg></div><h3>Focus and timeline</h3><p>Sessions of 15 to 50 minutes, and twelve weeks of activity to see where your energy goes.</p></div>
@@ -51,7 +66,7 @@
 
 <section class="block" id="preview"><div class="wrap">
   <h2>A preview.</h2>
-  <p class="sub">Smoked-glass panels over the sky, and nothing superfluous. The app itself is currently in French.</p>
+  <p class="sub">Smoked-glass panels over the sky, and nothing superfluous. The app is available in English and French.</p>
   <div class="gallery">
     <figure><div class="frame"><img src="../img/claude.jpg" alt="Claude creates a trip project with its tasks and a note" loading="lazy" width="2400" height="1350"></div><figcaption><b>Claude</b> · one sentence, and the project exists</figcaption></figure>
     <figure><div class="frame"><img src="../img/projet.jpg" alt="An open project with its tasks and due dates, next to its constellation" loading="lazy" width="2400" height="1350"></div><figcaption><b>A project</b> · notes, tasks, files and links</figcaption></figure>
@@ -62,44 +77,43 @@
 
 <section class="block" id="telecharger"><div class="wrap">
   <h2>Download Orbite.</h2>
-  <p class="sub">Free. The installer downloads the official Electron engine, verifies its checksum, then lets you choose where to install the app.</p>
+  <p class="sub">Free, lightweight (under 10 MB) and installed in seconds. A real installer for each system, with nothing else to download.</p>
   <div class="dl" id="dl">
     <article class="os" data-os="win">
       <svg class="logo-os" viewBox="0 0 32 32"><rect x="5" y="5" width="10" height="10" rx="1"/><rect x="17" y="5" width="10" height="10" rx="1"/><rect x="5" y="17" width="10" height="10" rx="1"/><rect x="17" y="17" width="10" height="10" rx="1"/></svg>
       <h3>Windows</h3><p>Windows 10 and 11, 64-bit</p>
-      <a class="btn primary" href="../telechargements/Orbite-Windows.zip" download><svg viewBox="0 0 24 24"><path d="M12 4v11m0 0l-4-4m4 4l4-4M5 19h14"/></svg>Download</a>
-      <div class="size">Orbite-Windows.zip · 393 KB</div>
+      <a class="btn primary" href="../telechargements/Orbite-Windows-Setup.exe" download><svg viewBox="0 0 24 24"><path d="M12 4v11m0 0l-4-4m4 4l4-4M5 19h14"/></svg>Download</a>
+      <div class="size">Orbite-Windows-Setup.exe · 3 MB</div>
     </article>
     <article class="os" data-os="mac">
       <svg class="logo-os" viewBox="0 0 32 32"><rect x="6" y="7" width="20" height="14" rx="2"/><path d="M3 24h26l-2 2H5z"/></svg>
-      <h3>macOS</h3><p>Apple silicon or Intel Mac</p>
-      <a class="btn primary" href="../telechargements/Orbite-macOS.zip" download><svg viewBox="0 0 24 24"><path d="M12 4v11m0 0l-4-4m4 4l4-4M5 19h14"/></svg>Download</a>
-      <div class="size">Orbite-macOS.zip · 402 KB</div>
+      <h3>macOS</h3><p>Apple silicon or Intel Mac, macOS 11 or later</p>
+      <a class="btn primary" href="../telechargements/Orbite-macOS.dmg" download><svg viewBox="0 0 24 24"><path d="M12 4v11m0 0l-4-4m4 4l4-4M5 19h14"/></svg>Download</a>
+      <div class="size">Orbite-macOS.dmg</div>
     </article>
     <article class="os" data-os="linux">
       <svg class="logo-os" viewBox="0 0 32 32"><rect x="4" y="6" width="24" height="17" rx="2.5"/><path d="M9 12l3.5 3L9 18M15 18h6M11 27h10M16 23v4"/></svg>
-      <h3>Linux</h3><p>Ubuntu, Kubuntu, Debian, Fedora…</p>
-      <a class="btn primary" href="../telechargements/Orbite-Linux.zip" download><svg viewBox="0 0 24 24"><path d="M12 4v11m0 0l-4-4m4 4l4-4M5 19h14"/></svg>Download</a>
-      <div class="size">Orbite-Linux.zip · 402 KB</div>
+      <h3>Linux</h3><p>Ubuntu, Kubuntu, Debian (.deb) · Fedora (.rpm)</p>
+      <a class="btn primary" href="../telechargements/Orbite-Linux.deb" download><svg viewBox="0 0 24 24"><path d="M12 4v11m0 0l-4-4m4 4l4-4M5 19h14"/></svg>Download the .deb</a>
+      <div class="size">Orbite-Linux.deb · 4.7 MB · <a href="../telechargements/Orbite-Linux.rpm" download>.rpm version</a></div>
     </article>
   </div>
   <div class="steps">
     <div class="tabs" id="tabs"><button data-os="win">Windows</button><button data-os="mac">macOS</button><button data-os="linux">Linux</button></div>
     <ol id="how-win">
-      <li>Right-click <b>Orbite-Windows.zip</b> → <b>Extract All</b>.</li>
-      <li>Open the <b>Orbite-Installateur</b> folder and double-click <b>Installer Orbite.cmd</b>.</li>
+      <li>Double-click <b>Orbite-Windows-Setup.exe</b>.</li>
       <li>If Windows shows "Windows protected your PC": <b>More info</b> → <b>Run anyway</b>.</li>
-      <li>The installer opens: follow the steps up to <b>Lancer Orbite</b> (Launch Orbite).</li>
+      <li>Installation takes a few seconds. Orbite appears in the Start menu and on the desktop.</li>
     </ol>
     <ol id="how-mac" hidden>
-      <li>Double-click <b>Orbite-macOS.zip</b>: <b>Installer-Orbite.command</b> appears.</li>
-      <li>Right-click it → <b>Open</b> → <b>Open</b>. If macOS refuses: System Settings → Privacy &amp; Security → <b>Open Anyway</b>.</li>
-      <li>The installer opens: follow the steps, and Orbite lands in Applications.</li>
+      <li>Open <b>Orbite-macOS.dmg</b> and drag <b>Orbite</b> into the <b>Applications</b> folder.</li>
+      <li>Launch Orbite from Applications. macOS shows a warning: click <b>Done</b>.</li>
+      <li>Open <b>System Settings</b> → <b>Privacy &amp; Security</b>, scroll down to <b>Security</b> and click <b>Open Anyway</b>. You only need to do this once.</li>
     </ol>
     <ol id="how-linux" hidden>
-      <li>Extract <b>Orbite-Linux.zip</b>.</li>
-      <li>In a terminal: <code>bash ~/Downloads/installer-orbite.sh</code></li>
-      <li>The installer opens: follow the steps, and Orbite appears in your applications menu.</li>
+      <li><b>Ubuntu, Kubuntu, Debian</b>: double-click <b>Orbite-Linux.deb</b> to open it in your software center, or in a terminal: <code>sudo apt install ./Orbite-Linux.deb</code></li>
+      <li><b>Fedora</b>: <code>sudo dnf install ./Orbite-Linux.rpm</code></li>
+      <li>Orbite appears in your applications menu.</li>
     </ol>
   </div>
 </div></section>
@@ -107,15 +121,35 @@
 <section class="block" id="faq"><div class="wrap">
   <h2>Questions.</h2>
   <div class="faq">
-    <h3>Claude</h3>
+    <h3>Assistants</h3>
+    <details><summary>Which assistant should I choose: Claude, ChatGPT or the local AI?</summary><ul>
+      <li><b>Claude</b> (Anthropic) and <b>ChatGPT</b> (OpenAI) are the most capable. They need an API key, billed per use by their maker.</li>
+      <li><b>The local AI</b> is free and private: it runs on your computer. It is slower and a bit less reliable on complex requests.</li>
+      <li>You can turn on several and switch between them in the conversation panel. The <b>main assistant</b>, chosen in Settings, prepares the brief, files captures and summarizes reading.</li>
+    </ul></details>
     <details><summary>How do I turn on Claude in Orbite?</summary>
       <ol>
         <li>Create an account at <a href="https://console.anthropic.com" target="_blank" rel="noopener">console.anthropic.com</a> (Anthropic's developer console, separate from claude.ai).</li>
         <li>In <b>Billing</b>, add some credit. It's prepaid: nothing is charged beyond it.</li>
         <li>In <b>API Keys</b>, click <b>Create Key</b> and copy the key starting with <code>sk-ant-</code>. It is only shown once.</li>
-        <li>In Orbite, open <b>Réglages</b> (Settings, the gear at the top right), paste the key and click <b>Enregistrer</b> (Save).</li>
+        <li>In Orbite, open <b>Settings</b> (the gear at the top right) → <b>Assistants</b> → <b>Claude</b>, paste the key and click <b>Save</b>.</li>
         <li>Click <b>✦ Claude</b> at the top of the screen and type your request, for example: "Create a project for my move with the tasks to do".</li>
       </ol></details>
+    <details><summary>How do I turn on ChatGPT in Orbite?</summary>
+      <ol>
+        <li>Create an account at <a href="https://platform.openai.com" target="_blank" rel="noopener">platform.openai.com</a> (OpenAI's developer platform, separate from chatgpt.com).</li>
+        <li>In <b>Billing</b>, add some credit.</li>
+        <li>In <b>API keys</b>, click <b>Create new secret key</b> and copy the key starting with <code>sk-</code>.</li>
+        <li>In Orbite: <b>Settings</b> → <b>Assistants</b> → <b>ChatGPT</b>, paste the key and click <b>Save</b>. The list of models fills in automatically.</li>
+      </ol><p>A ChatGPT Plus subscription isn't enough: as with Claude, the API is a separate service, billed per use.</p></details>
+    <details><summary>How do I turn on the free local AI?</summary>
+      <ol>
+        <li>Install <a href="https://ollama.com/download" target="_blank" rel="noopener">Ollama</a>, free, like a normal app, and open it.</li>
+        <li>In Orbite: <b>Settings</b> → <b>Assistants</b> → <b>Local AI</b> → <b>Turn on</b>.</li>
+        <li>Click <b>Download</b> next to the recommended model. The download (2.5 to 5 GB) happens only once.</li>
+      </ol></details>
+    <details><summary>Will the local AI slow down my computer?</summary><p>Only while it answers: it then uses 4 to 8 GB of memory. On a recent Mac (Apple silicon) or a PC with 16 GB of memory it runs well; with 8 GB it's slow. That's why it is off by default and you choose to turn it on.</p></details>
+    <details><summary>I don't want any AI. Can I hide it?</summary><p>Yes. In <b>Settings</b> → <b>Assistants</b>, untick "Show" for Claude and ChatGPT and leave the local AI off. The buttons and mentions disappear, and Orbite stays a complete project app.</p></details>
     <details><summary>Is my claude.ai subscription enough?</summary><p>No. claude.ai subscriptions (Pro, Max, Team) and the API are two separate Anthropic services. Orbite uses the API, which needs its own key and its own credit.</p></details>
     <details><summary>How much does Claude cost in Orbite?</summary><p>Orbite takes nothing: you pay Anthropic directly, per use, with no subscription. A typical request usually costs a few cents, and less with the lighter models. You can set a monthly spend limit in the Anthropic console (under <b>Limits</b>) so there are never surprises. Current prices are at <a href="https://www.anthropic.com/pricing" target="_blank" rel="noopener">anthropic.com/pricing</a>.</p></details>
     <details><summary>Which model should I pick?</summary><ul>
@@ -131,23 +165,25 @@
       <li>Answer questions about your projects: "What's overdue this week?"</li>
       <li>Prepare the morning brief, file your quick captures in the right project, and summarize your articles and PDFs.</li>
     </ul></details>
-    <details><summary>What is sent to Anthropic?</summary><p>Only what Claude needs, and only when you use a Claude feature: your request and the relevant project details. Without an API key, nothing leaves your computer. Orbite has no account, no ads and no analytics. Your key is encrypted with your system's keychain.</p></details>
+    <details><summary>What is sent over the internet?</summary><p>Only what your assistant needs, and only when you use it: your request and the relevant project details, sent to Anthropic (Claude) or OpenAI (ChatGPT). With the local AI, or without any assistant, nothing leaves your computer. Orbite has no account, no ads and no analytics. Your keys are encrypted with your system's keychain.</p></details>
 
     <h3>Using Orbite</h3>
-    <details><summary>How does quick capture work?</summary><p>From any app, press <kbd>⌥ Space</kbd> on Mac or <kbd>Ctrl Alt Space</kbd> on Windows and Linux. A small window opens: type your idea, confirm, and it's saved. With Claude, it is filed in the right project automatically; without Claude, it goes to the Inbox. To keep the shortcut always available, tick "Ouvrir Orbite au démarrage de l'ordinateur" (open Orbite at startup) in Settings.</p></details>
+    <details><summary>How does quick capture work?</summary><p>From any app, press <kbd>⌥ Space</kbd> on Mac or <kbd>Ctrl Alt Space</kbd> on Windows and Linux. A small window opens: type your idea, confirm, and it's saved. With Claude, it is filed in the right project automatically; without Claude, it goes to the Inbox. To keep the shortcut always available, tick "Open Orbite when the computer starts" in Settings.</p></details>
     <details><summary>How do I import my claude.ai conversations?</summary><ol>
       <li>On claude.ai: <b>Settings</b> → <b>Privacy</b> → <b>Export data</b>. You'll receive a .zip file by email.</li>
-      <li>In Orbite: <b>Réglages</b> → <b>Choisir l'export…</b>, then select the .zip.</li>
+      <li>In Orbite: <b>Settings</b> → <b>Choose the export…</b>, then select the .zip.</li>
     </ol><p>Your Claude projects become Orbite projects, and each conversation becomes a note. You can import again later: nothing is duplicated.</p></details>
-    <details><summary>Does Orbite work without Claude?</summary><p>Yes. Constellation, projects, notes, tasks, focus, timeline and quick capture all work without an API key. Claude adds automatic creation, the brief and summaries.</p></details>
-    <details><summary>How do I update Orbite?</summary><p>Download the new version here and run the installer again to the same location. The app is replaced, your projects stay untouched.</p></details>
-    <details><summary>Is the app available in English?</summary><p>Not yet: the interface is in French for now. An English version is planned.</p></details>
+    <details><summary>Does Orbite work without an assistant?</summary><p>Yes. Constellation, projects, notes, tasks, focus, timeline, reminders and quick capture all work without any AI. The assistant adds automatic creation, the written brief and summaries.</p></details>
+    <details><summary>How do I replay the tour?</summary><p>In <b>Settings</b> → <b>Updates and help</b> → <b>Replay the tour</b>, or type "tour" in search (<kbd>⌘K</kbd> or <kbd>Ctrl K</kbd>).</p></details>
+    <details><summary>How do I update Orbite?</summary><p>Since version 1.3, Orbite checks for new versions on its own and offers "Update": one click downloads and opens the installer. You can also check in Settings → Updates, or download the new version here and install it over the old one. The app is replaced, your projects in Documents/Orbite stay untouched. If you are coming from version 1.1, paste your API key again in Settings.</p></details>
+    <details><summary>Is the app available in English?</summary><p>Yes, since version 1.3. It follows your computer's language, and you can change it in Settings → Reminders and language.</p></details>
 
     <h3>Install and data</h3>
     <details><summary>Windows blocks Orbite: "An Application Control policy has blocked this file"</summary><p>That's Windows 11 Smart App Control: it blocks software that isn't yet signed by a recognized publisher. You can turn it off in Windows Security → App &amp; browser control. Be aware that on many versions of Windows it can't be turned back on without resetting Windows. A signed version of Orbite is planned.</p></details>
+    <details><summary>Why is Orbite so light?</summary><p>Since version 1.2, Orbite is built with Tauri and Rust: it uses the web engine already on your computer instead of shipping its own. The app weighs under 10 MB, starts faster and uses less memory.</p></details>
     <details><summary>Where is my data?</summary><p>On your computer, in <code>Documents/Orbite</code>: one folder per project, and each note is a plain <code>.md</code> file. Back it up or sync it however you like (iCloud, OneDrive, Nextcloud…).</p></details>
     <details><summary>Is Orbite really free?</summary><p>Yes: no subscription, no ads, no hidden paid tier. Only Claude, if you turn it on, is billed by Anthropic based on your usage.</p></details>
-    <details><summary>How do I uninstall?</summary><p>Windows: <code>desinstaller.cmd</code> in the install folder. Linux: <code>desinstaller.sh</code> in the install folder. macOS: move Orbite to the Trash. Your projects in Documents/Orbite are kept.</p></details>
+    <details><summary>How do I uninstall?</summary><p>Windows: Settings → Apps → Orbite → Uninstall. macOS: move Orbite from Applications to the Trash. Linux: <code>sudo apt remove orbite</code> (or <code>sudo dnf remove orbite</code>). Your projects in Documents/Orbite are kept.</p></details>
     <details><summary>Can I reuse or modify Orbite's code?</summary><p>No. Orbite is free to use, but its code remains the property of its author. Copying, modifying and redistributing it are forbidden without written permission. The full terms are in the <a href="../LICENSE.txt">license</a> (in French).</p></details>
   </div>
 </div></section>
@@ -155,7 +191,7 @@
 <footer><div class="wrap">
   <a class="logo" href="#"><i></i>Orbite</a>
   <span class="grow"></span>
-  <span>© 2026 Enguerrand Thomas d’Henain · All rights reserved · <a href="../LICENSE.txt">License</a></span>
+  <span>© 2026 Enguerrand Thomas Dhenain · All rights reserved · <a href="../LICENSE.txt">License</a></span>
 </div></footer>
 
 <script src="../site.js"></script>

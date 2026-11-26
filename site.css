@@ -107,3 +107,4 @@ details ol,details ul{color:var(--soft);margin:12px 0 0;padding-left:22px;max-wi
 details li::marker{color:var(--star)}
 details b{color:var(--ink)}
 .shot{position:relative}
+.steps ol[hidden]{display:none}

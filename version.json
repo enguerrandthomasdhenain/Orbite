@@ -1,0 +1,9 @@
+{
+  "version": "1.3.0",
+  "notes": "ChatGPT et une IA locale gratuite rejoignent Claude, tutoriel de bienvenue, rappels, sauvegarde et app en anglais.",
+  "notesEn": "ChatGPT and a free local AI join Claude, a welcome tour, reminders, backup and the app in English.",
+  "windows": "telechargements/Orbite-Windows-Setup.exe",
+  "macos": "telechargements/Orbite-macOS.dmg",
+  "deb": "telechargements/Orbite-Linux.deb",
+  "rpm": "telechargements/Orbite-Linux.rpm"
+}
